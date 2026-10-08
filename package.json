@@ -1,0 +1,89 @@
+{
+  "name": "strapi-plugin-knowledge-base",
+  "version": "1.0.2",
+  "description": "In-context documentation for the Strapi 5 admin: a 👀 button next to every content type, component and field opens a Textile (Redmine-style) description of what it is and where it's used. Content lives in per-language JSON files, not the database.",
+  "keywords": [
+    "content-manager",
+    "documentation",
+    "knowledge-base",
+    "plugin",
+    "redmine",
+    "strapi",
+    "strapi-plugin",
+    "textile"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Ihor Sahaidak"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ihorsahaidak/strapi-plugin-knowledge-base.git"
+  },
+  "homepage": "https://github.com/ihorsahaidak/strapi-plugin-knowledge-base#readme",
+  "bugs": {
+    "url": "https://github.com/ihorsahaidak/strapi-plugin-knowledge-base/issues"
+  },
+  "type": "commonjs",
+  "exports": {
+    "./package.json": "./package.json",
+    "./strapi-admin": {
+      "types": "./dist/admin/src/index.d.ts",
+      "source": "./admin/src/index.ts",
+      "import": "./dist/admin/index.mjs",
+      "require": "./dist/admin/index.js",
+      "default": "./dist/admin/index.js"
+    },
+    "./strapi-server": {
+      "source": "./server/src/index.js",
+      "import": "./dist/server/index.mjs",
+      "require": "./dist/server/index.js",
+      "default": "./dist/server/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "strapi-plugin build",
+    "watch": "strapi-plugin watch",
+    "watch:link": "strapi-plugin watch:link",
+    "verify": "strapi-plugin verify"
+  },
+  "devDependencies": {
+    "@strapi/design-system": "^2.0.0",
+    "@strapi/icons": "^2.0.0",
+    "@strapi/sdk-plugin": "^5.3.2",
+    "@strapi/strapi": "^5.0.0",
+    "@strapi/typescript-utils": "^5.0.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "prettier": "^3.3.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-intl": "^6.6.0",
+    "react-router-dom": "^6.26.0",
+    "styled-components": "^6.1.13",
+    "typescript": "^5.5.4"
+  },
+  "peerDependencies": {
+    "@strapi/design-system": "^2.0.0",
+    "@strapi/icons": "^2.0.0",
+    "@strapi/strapi": "^5.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-intl": "^6.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
+  },
+  "strapi": {
+    "kind": "plugin",
+    "name": "knowledge-base",
+    "displayName": "Knowledge Base",
+    "description": "Document content types, components and fields in place; content stored as per-language JSON files."
+  },
+  "engines": {
+    "node": ">=18.0.0 <=24.x.x",
+    "npm": ">=6.0.0"
+  }
+}
